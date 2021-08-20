@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4056482706014857901}
   - component: {fileID: 1145143637458871560}
   - component: {fileID: 2882489973139313090}
+  - component: {fileID: 8102445810781410722}
   m_Layer: 0
   m_Name: tree_pineRoundE
   m_TagString: Untagged
@@ -82,3 +83,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8102445810781410722
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675030943186792471}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -798613621640728851, guid: c05a749c432996a4bb654470d4baaad1, type: 3}
