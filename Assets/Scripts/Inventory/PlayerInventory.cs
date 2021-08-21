@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
     public float interactRange = 5f;
     public GameObject cam;
     public Text tooltipText;
+    public GameObject map;
 
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
     // Update is called once per frame
@@ -30,6 +31,11 @@ public class PlayerInventory : MonoBehaviour
         } else
         {
             tooltipText.text = "";
+        }
+
+        if(Input.GetButtonDown("Map") && inventory.ContainsKey("map"))
+        {
+            map.SetActive(!map.activeSelf);
         }
     }
 
