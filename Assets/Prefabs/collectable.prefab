@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 488379424039444288}
   - component: {fileID: 2388004248859962250}
   - component: {fileID: 4189219868866005598}
+  - component: {fileID: 4013276576998557467}
+  - component: {fileID: 8905102763460715524}
+  - component: {fileID: 7454710896480916453}
   m_Layer: 6
   m_Name: collectable
   m_TagString: Untagged
@@ -97,3 +100,42 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2565378675570293008, guid: ea8994bd3abfe3041b3e15bcbbafd9f9, type: 3}
+--- !u!114 &4013276576998557467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189219868866005599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca26b106aa62d2346afd0d7ea4969eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltip: Press 'E' to pickup
+--- !u!114 &8905102763460715524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189219868866005599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f842bf19f4f19c44dbe47be3d071d9c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7454710896480916453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189219868866005599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0803fbd2344ef8748ac89b0e711d7a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemIdentifier: collectible
+  quantity: 1

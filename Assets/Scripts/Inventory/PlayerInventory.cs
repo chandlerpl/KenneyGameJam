@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject cam;
     public Text tooltipText;
 
+    private Dictionary<string, int> inventory = new Dictionary<string, int>();
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +31,26 @@ public class PlayerInventory : MonoBehaviour
         {
             tooltipText.text = "";
         }
+    }
+
+    public void AddItem(Item item)
+    {
+        if(inventory.ContainsKey(item.itemIdentifier))
+        {
+            inventory[item.itemIdentifier] = inventory[item.itemIdentifier] + item.quantity;
+        } else
+        {
+            inventory.Add(item.itemIdentifier, item.quantity);
+        }
+    }
+
+    public bool ContainsItem(Item item)
+    {
+        if (!inventory.ContainsKey(item.itemIdentifier))
+        {
+            return false;
+        }
+            
+        return inventory[item.itemIdentifier] == item.quantity;
     }
 }
