@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 461031388275573459}
   - component: {fileID: 3587735095952772470}
   - component: {fileID: 1598431823483337148}
-  m_Layer: 0
+  - component: {fileID: 2067537710}
+  - component: {fileID: 2067537707}
+  - component: {fileID: 2067537708}
+  - component: {fileID: 2067537709}
+  m_Layer: 6
   m_Name: radio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,9 +29,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949759477572753513}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3695, y: 0.3695, z: 0.3695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00002, y: 0.00248, z: -0}
+  m_LocalScale: {x: 0.0005, y: 0.001, z: 0.0005}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,3 +87,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2067537710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949759477572753513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.15, y: 2.281911, z: 0.975}
+  m_Center: {x: 1.575, y: 1.1409554, z: 0.4875}
+--- !u!114 &2067537707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949759477572753513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f842bf19f4f19c44dbe47be3d071d9c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2067537708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949759477572753513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0803fbd2344ef8748ac89b0e711d7a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemIdentifier: clock
+  quantity: 1
+--- !u!114 &2067537709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949759477572753513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca26b106aa62d2346afd0d7ea4969eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltip: Press 'E' to pickup

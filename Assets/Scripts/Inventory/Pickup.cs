@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Item))]
 public class Pickup : MonoBehaviour, IInteractable
 {
+    public AudioSource source;
+
     public void OnInteract(GameObject interactingObj, PlayerInventory inventory)
     {
         Item item = GetComponent<Item>();
@@ -12,5 +14,10 @@ public class Pickup : MonoBehaviour, IInteractable
         inventory.AddItem(item);
 
         gameObject.SetActive(false);
+
+        if(source != null)
+        {
+            source.Play();
+        }
     }
 }
