@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlatformRotation : MonoBehaviour
 {
     public Vector3 rotationOffset = new Vector3(0, 45, 0);
+    public float startRotation = 90;
     public float rotationFrequency = 30;
     public float rotationDuration = 5;
     public PlayerInventory inventory;
@@ -30,6 +31,8 @@ public class PlatformRotation : MonoBehaviour
 
     IEnumerator RotatePlatform()
     {
+        yield return new WaitForSeconds(startRotation);
+
         while (true)
         {
             float remainingTime = rotationFrequency;
@@ -40,7 +43,9 @@ public class PlatformRotation : MonoBehaviour
 
                 if(inventory.ContainsItem(item))
                 {
-                    timeText.text = remainingTime.ToString();
+                    TimeSpan t = TimeSpan.FromSeconds(remainingTime);
+                    
+                    timeText.text = string.Format("{0:D2}:{1:D2}", t.Minutes, t.Seconds);
                     timeText.enabled = true;
                 }
             }

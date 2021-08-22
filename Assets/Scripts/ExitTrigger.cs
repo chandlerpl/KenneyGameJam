@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Item))]
 public class ExitTrigger : MonoBehaviour, IInteractable
@@ -11,8 +12,10 @@ public class ExitTrigger : MonoBehaviour, IInteractable
 
         if(inventory.ContainsItem(item))
         {
-            // End game? For now despawning ship to test it's working
-            gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            SceneManager.LoadScene(2);
         }
     }
 }
