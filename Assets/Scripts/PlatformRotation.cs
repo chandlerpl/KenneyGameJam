@@ -35,6 +35,20 @@ public class PlatformRotation : MonoBehaviour
 
         while (true)
         {
+            float time = 0;
+            Quaternion startRot = transform.rotation;
+            soundEffect.SetActive(true);
+            while (time < 1)
+            {
+                time += Time.deltaTime / rotationDuration;
+
+                _rigidbody.MoveRotation(Quaternion.Lerp(startRot, _nextRotation, time));
+
+                yield return null;
+            }
+            soundEffect.SetActive(false);
+            _nextRotation *= _rotationOffset;
+
             float remainingTime = rotationFrequency;
             while(remainingTime > 0)
             {
@@ -49,20 +63,6 @@ public class PlatformRotation : MonoBehaviour
                     timeText.enabled = true;
                 }
             }
-
-            float time = 0;
-            Quaternion startRot = transform.rotation;
-            soundEffect.SetActive(true);
-            while (time < 1)
-            {
-                time += Time.deltaTime / rotationDuration;
-
-                _rigidbody.MoveRotation(Quaternion.Lerp(startRot, _nextRotation, time));
-
-                yield return null;
-            }
-            soundEffect.SetActive(false);
-            _nextRotation *= _rotationOffset;
         }
     }
 }
