@@ -8,8 +8,8 @@ public class PlatformRotation : MonoBehaviour
 {
     public Vector3 rotationOffset = new Vector3(0, 45, 0);
     public float startRotation = 90;
-    public float rotationFrequency = 30;
-    public float rotationDuration = 5;
+    public Vector2 rotationFrequencyMinMax = new Vector2(45, 75);
+    public Vector2 rotationDurationMinMax = new Vector2(3, 10);
     public PlayerInventory inventory;
     public Text timeText;
     public GameObject soundEffect;
@@ -38,6 +38,8 @@ public class PlatformRotation : MonoBehaviour
             float time = 0;
             Quaternion startRot = transform.rotation;
             soundEffect.SetActive(true);
+
+            float rotationDuration = UnityEngine.Random.Range(rotationDurationMinMax.x, rotationDurationMinMax.y);
             while (time < 1)
             {
                 time += Time.deltaTime / rotationDuration;
@@ -49,7 +51,7 @@ public class PlatformRotation : MonoBehaviour
             soundEffect.SetActive(false);
             _nextRotation *= _rotationOffset;
 
-            float remainingTime = rotationFrequency;
+            float remainingTime = UnityEngine.Random.Range(rotationFrequencyMinMax.x, rotationFrequencyMinMax.y);
             while(remainingTime > 0)
             {
                 yield return new WaitForSeconds(1);
